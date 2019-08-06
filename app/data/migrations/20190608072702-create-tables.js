@@ -186,8 +186,7 @@ module.exports = {
                   type: Sequelize.INTEGER
                 },
                 createdAt: Sequelize.DATE,
-                updatedAt: Sequelize.DATE,
-                deletedAt: Sequelize.DATE
+                updatedAt: Sequelize.DATE
               },
               { transaction }
             ),
