@@ -1,20 +1,16 @@
 module.exports = function(orm, DataTypes) {
-  const Game = orm.define(
-    "game",
+  const Gameweek = orm.define(
+    'gameweek',
     {
+      name: {
+        allowNull: false,
+        type: DataTypes.STRING
+      },
       start: {
         type: DataTypes.DATE
       },
       end: {
         type: DataTypes.DATE
-      },
-      hometeam_score: {
-        allowNull: false,
-        type: DataTypes.FLOAT
-      },
-      awayteam_score: {
-        allowNull: false,
-        type: DataTypes.FLOAT
       },
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE
@@ -22,5 +18,5 @@ module.exports = function(orm, DataTypes) {
     {}
   );
 
-  return Game;
+  return Gameweek;
 };
