@@ -3,7 +3,7 @@ const now = new Date();
 module.exports = [
   {
     email: 'demo@demo.com',
-    username: 'demo',
+    name: 'demo',
     password: '123123',
     money: 55,
     score: 100,
@@ -12,38 +12,38 @@ module.exports = [
   },
   {
     email: 'gbottoms1@arizona.edu',
-    username: 'thartwright1',
+    name: 'thartwright1',
     password: '123123',
     money: 55,
     score: 100,
-    team_name: 'Liverpool',
+    team_name: 'Manchester City',
     chip_used: 'wildcard'
   },
   {
     email: 'cclears2@state.gov',
-    username: 'bkopps2',
+    name: 'bkopps2',
     password: '123123',
     money: 55,
     score: 100,
-    team_name: 'Liverpool',
+    team_name: 'Manchester United',
     chip_used: 'wildcard'
   },
   {
     email: 'htie3@chronoengine.com',
-    username: 'kmitchinson3',
+    name: 'kmitchinson3',
     password: '123123',
     money: 55,
     score: 100,
-    team_name: 'Liverpool',
+    team_name: 'Arsenal',
     chip_used: 'wildcard'
   },
   {
     email: 'bbirmingham4@guardian.co.uk',
-    username: 'fbrabon4',
+    name: 'fbrabon4',
     password: '123123',
     money: 55,
     score: 100,
-    team_name: 'Liverpool',
+    team_name: 'Tottenham',
     chip_used: 'wildcard'
   }
 ].map(user => ({
