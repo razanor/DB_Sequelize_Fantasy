@@ -153,7 +153,6 @@ module.exports = {
             queryInterface.removeColumn('users', 'favorite_clubId', { transaction }),
             queryInterface.removeColumn('users', 'game_week_historyId', { transaction }),
             queryInterface.removeColumn('player_stats', 'clubId', { transaction }),
-            queryInterface.removeColumn('postReactions', 'postId', { transaction }),
             queryInterface.removeColumn('games', 'hometeamId', { transaction }),
             queryInterface.removeColumn('games', 'awayteamId', { transaction }),
             queryInterface.removeColumn('games', 'game_eventId', { transaction }),

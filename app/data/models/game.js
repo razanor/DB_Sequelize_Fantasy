@@ -1,6 +1,6 @@
 module.exports = function(orm, DataTypes) {
   const Game = orm.define(
-    'game',
+    "game",
     {
       start: {
         type: DataTypes.DATE
@@ -9,6 +9,10 @@ module.exports = function(orm, DataTypes) {
         type: DataTypes.DATE
       },
       hometeam_score: {
+        allowNull: false,
+        type: DataTypes.FLOAT
+      },
+      awayteam_score: {
         allowNull: false,
         type: DataTypes.FLOAT
       },
