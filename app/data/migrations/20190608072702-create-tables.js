@@ -1,19 +1,19 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.sequelize
-      .query('CREATE EXTENSION IF NOT EXISTS pgcrypto;')
+      .query("CREATE EXTENSION IF NOT EXISTS pgcrypto;")
       .then(() =>
         queryInterface.sequelize.transaction(transaction =>
           Promise.all([
             queryInterface.createTable(
-              'users',
+              "users",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 name: {
                   allowNull: false,
@@ -44,9 +44,9 @@ module.exports = {
                 chip_used: {
                   allowNull: false,
                   type: Sequelize.ENUM(
-                    'wildcard',
-                    'triple_caption',
-                    'bench_boost'
+                    "wildcard",
+                    "triple_caption",
+                    "bench_boost"
                   )
                 },
                 createdAt: Sequelize.DATE,
@@ -55,14 +55,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'games',
+              "games",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 start: {
                   type: Sequelize.DATE
@@ -80,14 +80,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'player_stats',
+              "player_stats",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 first_name: {
                   allowNull: false,
@@ -108,10 +108,10 @@ module.exports = {
                 position: {
                   allowNull: false,
                   type: Sequelize.ENUM(
-                    'forward',
-                    'goalkeeper',
-                    'defender',
-                    'midfielder'
+                    "forward",
+                    "goalkeeper",
+                    "defender",
+                    "midfielder"
                   )
                 },
                 goals: {
@@ -148,14 +148,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'player_match_stats',
+              "player_match_stats",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 goals: {
                   allowNull: false,
@@ -191,14 +191,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'events',
+              "events",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 time_stamp: {
                   type: Sequelize.DATE
@@ -206,12 +206,12 @@ module.exports = {
                 event_type: {
                   allowNull: false,
                   type: Sequelize.ENUM(
-                    'goal',
-                    'successful_pass',
-                    'shoot',
-                    'save',
-                    'yellow_card',
-                    'red_card'
+                    "goal",
+                    "successful_pass",
+                    "shoot",
+                    "save",
+                    "yellow_card",
+                    "red_card"
                   )
                 },
                 createdAt: Sequelize.DATE,
@@ -220,14 +220,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'gameweeks',
+              "gameweeks",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 name: {
                   allowNull: false,
@@ -245,14 +245,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'gameweek_histories',
+              "gameweek_histories",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 createdAt: Sequelize.DATE,
                 updatedAt: Sequelize.DATE
@@ -260,14 +260,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'leagues',
+              "leagues",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 name: {
                   allowNull: false,
@@ -283,14 +283,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'league_participants',
+              "league_participants",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 createdAt: Sequelize.DATE,
                 updatedAt: Sequelize.DATE
@@ -298,14 +298,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'seasons',
+              "seasons",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 createdAt: Sequelize.DATE,
                 updatedAt: Sequelize.DATE
@@ -313,14 +313,14 @@ module.exports = {
               { transaction }
             ),
             queryInterface.createTable(
-              'football_clubs',
+              "football_clubs",
               {
                 id: {
                   allowNull: false,
                   autoIncrement: false,
                   primaryKey: true,
                   type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  defaultValue: Sequelize.literal("gen_random_uuid()")
                 },
                 name: {
                   allowNull: false,
@@ -346,16 +346,17 @@ module.exports = {
   down: queryInterface =>
     queryInterface.sequelize.transaction(transaction =>
       Promise.all([
-        queryInterface.dropTable('users', { transaction }),
-        queryInterface.dropTable('games', { transaction }),
-        queryInterface.dropTable('player_stats', { transaction }),
-        queryInterface.dropTable('player_match_stats', { transaction }),
-        queryInterface.dropTable('events', { transaction }),
-        queryInterface.dropTable('gameweek_histories', { transaction }),
-        queryInterface.dropTable('leagues', { transaction }),
-        queryInterface.dropTable('league_participants', { transaction }),
-        queryInterface.dropTable('seasons', { transaction }),
-        queryInterface.dropTable('football_clubs', { transaction })
+        queryInterface.dropTable("users", { transaction }),
+        queryInterface.dropTable("games", { transaction }),
+        queryInterface.dropTable("player_stats", { transaction }),
+        queryInterface.dropTable("player_match_stats", { transaction }),
+        queryInterface.dropTable("events", { transaction }),
+        queryInterface.dropTable("gameweek", { transaction }),
+        queryInterface.dropTable("gameweek_histories", { transaction }),
+        queryInterface.dropTable("leagues", { transaction }),
+        queryInterface.dropTable("league_participants", { transaction }),
+        queryInterface.dropTable("seasons", { transaction }),
+        queryInterface.dropTable("football_clubs", { transaction })
       ])
     )
 };
