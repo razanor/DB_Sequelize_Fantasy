@@ -20,7 +20,7 @@ module.exports = function(orm, DataTypes) {
       },
       position: {
         allowNull: false,
-        type: DataTypes.ENUM('forward', 'goalkeeper', 'defender', 'midfielder')
+        type: DataTypes.ENUM('1', '2', '3', '4')
       },
       goals: {
         allowNull: false,

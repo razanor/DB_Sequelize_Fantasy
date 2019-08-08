@@ -107,12 +107,7 @@ module.exports = {
                 },
                 position: {
                   allowNull: false,
-                  type: Sequelize.ENUM(
-                    'forward',
-                    'goalkeeper',
-                    'defender',
-                    'midfielder'
-                  )
+                  type: Sequelize.ENUM('1', '2', '3', '4')
                 },
                 goals: {
                   allowNull: false,
@@ -321,10 +316,9 @@ module.exports = {
               {
                 id: {
                   allowNull: false,
-                  autoIncrement: false,
+                  autoIncrement: true,
                   primaryKey: true,
-                  type: Sequelize.UUID,
-                  defaultValue: Sequelize.literal('gen_random_uuid()')
+                  type: Sequelize.INTEGER
                 },
                 name: {
                   allowNull: false,

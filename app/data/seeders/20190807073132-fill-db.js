@@ -5,7 +5,8 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     try {
       await queryInterface.bulkInsert('users', userSeeds, {});
-      await queryInterface.bulkInsert('player_stats', player_statSeeds, {});
+      const seedsData = await player_statSeeds;
+      await queryInterface.bulkInsert('player_stats', seedsData, {});
     } catch (err) {
       console.log(`Seeding error: ${err}`);
     }

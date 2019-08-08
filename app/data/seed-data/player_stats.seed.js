@@ -9,7 +9,11 @@ const promise = new Promise((resolve, reject) => {
     .pipe(
       csv({
         mapValues: ({ header, index, value }) => {
-          if (header != 'first_name' && header != 'second_name') {
+          if (
+            header != 'first_name' &&
+            header != 'second_name' &&
+            header != 'position'
+          ) {
             return parseFloat(value);
           }
           return value;
