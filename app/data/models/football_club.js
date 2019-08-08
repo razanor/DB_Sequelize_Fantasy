@@ -10,7 +10,15 @@ module.exports = function(orm, DataTypes) {
         allowNull: false,
         type: DataTypes.STRING
       },
-      wins: {
+      win: {
+        allowNull: false,
+        type: DataTypes.INTEGER
+      },
+      loss: {
+        allowNull: false,
+        type: DataTypes.INTEGER
+      },
+      played: {
         allowNull: false,
         type: DataTypes.INTEGER
       },

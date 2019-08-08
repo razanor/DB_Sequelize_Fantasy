@@ -328,7 +328,15 @@ module.exports = {
                   allowNull: false,
                   type: Sequelize.STRING
                 },
-                wins: {
+                win: {
+                  allowNull: false,
+                  type: Sequelize.INTEGER
+                },
+                loss: {
+                  allowNull: false,
+                  type: Sequelize.INTEGER
+                },
+                played: {
                   allowNull: false,
                   type: Sequelize.INTEGER
                 },

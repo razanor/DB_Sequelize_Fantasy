@@ -1,11 +1,15 @@
 const userSeeds = require('../seed-data/users.seed');
 const player_statSeeds = require('../seed-data/player_stats.seed');
+const football_clubSeeds = require('../seed-data/football_clubs.seed');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     try {
+      let seedsData;
       await queryInterface.bulkInsert('users', userSeeds, {});
-      const seedsData = await player_statSeeds;
+      seedsData = await football_clubSeeds;
+      await queryInterface.bulkInsert('football_clubs', seedsData, {});
+      seedsData = await player_statSeeds;
       await queryInterface.bulkInsert('player_stats', seedsData, {});
     } catch (err) {
       console.log(`Seeding error: ${err}`);
