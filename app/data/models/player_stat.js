@@ -26,7 +26,7 @@ module.exports = function(orm, DataTypes) {
         allowNull: false,
         type: DataTypes.INTEGER
       },
-      successful_passes: {
+      assists: {
         allowNull: false,
         type: DataTypes.INTEGER
       },
@@ -47,6 +47,10 @@ module.exports = function(orm, DataTypes) {
         type: DataTypes.INTEGER
       },
       red_cards: {
+        allowNull: false,
+        type: DataTypes.INTEGER
+      },
+      code: {
         allowNull: false,
         type: DataTypes.INTEGER
       },
